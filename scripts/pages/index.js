@@ -13,7 +13,12 @@ async function displayData(photographers) {
 
 async function init() {
   const photographers = await getPhotographers();
-  displayData(photographers);
+  if (photographers.length === 0) {
+    // TODO : replace alert with better UX/UI
+    alert("Aucun photographe trouvé. Veuillez réessayer plus tard.");
+  } else {
+    displayData(photographers);
+  }
 }
 
 init();

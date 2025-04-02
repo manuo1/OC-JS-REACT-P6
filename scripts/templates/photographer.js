@@ -9,7 +9,6 @@ function photographerTemplate(data) {
     id,
   } = data;
 
-  // Construction du chemin de l'image
   const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
 
   function getPhotographerCardDOM() {
@@ -19,14 +18,14 @@ function photographerTemplate(data) {
 
     // -------------------- Photographer page link -------------------
     const link = document.createElement("a");
-    link.setAttribute("href", `${id}`);
+    link.setAttribute("href", `photographer.html?id=${id}`);
     link.setAttribute("aria-label", `Voir le profil de ${name}`);
     link.classList.add("photographer__link");
 
     // -------------------- Photographer ID photo -------------------
     const img = document.createElement("img");
     img.setAttribute("src", picture);
-    img.setAttribute("alt", name);
+    img.setAttribute("alt", `Photo de ${name}`);
     img.classList.add("photographer__image");
 
     // -------------------- Photographer name -------------------
