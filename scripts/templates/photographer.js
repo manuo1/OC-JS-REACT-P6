@@ -9,7 +9,7 @@ function photographerTemplate(data) {
     id,
   } = data;
 
-  const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
+  const picture = `assets/photographers/id-photos/${portrait}`;
 
   function getPhotographerCardDOM() {
     // ==================== Photographer article container ====================
