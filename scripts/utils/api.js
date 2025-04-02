@@ -19,7 +19,7 @@ async function getPhotographers() {
     return data.photographers;
   } catch (error) {
     console.error("Unable to get photographers data :", error);
-    return [];
+    return null;
   }
 }
 

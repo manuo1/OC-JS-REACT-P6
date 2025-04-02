@@ -17,8 +17,8 @@ async function init() {
   }
 
   // modal display / close
-  document.querySelector(".contact_button").addEventListener("click", displayModal);
-  document.querySelector("#contact_modal img").addEventListener("click", closeModal);
+  document.getElementById("contact_button").addEventListener("click", displayModal);
+  document.getElementById("close-icon").addEventListener("click", closeModal);
 }
 
 init();
