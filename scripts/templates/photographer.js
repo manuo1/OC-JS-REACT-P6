@@ -68,7 +68,7 @@ function photographerTemplate(data) {
     return article;
   }
 
-  return { name, picture, getPhotographerCardDOM: getPhotographerCardDOM };
+  return { getPhotographerCardDOM: getPhotographerCardDOM };
 }
 
 export { photographerTemplate };
