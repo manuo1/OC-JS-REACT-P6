@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding-top: 35px;
+}
+.header__logo {
+  height: 50px;
+  margin-left: 100px;
+}
+.header__title {
+  color: #901c1c;
+  font-size: 36px;
+  margin-right: 100px;
+}
+
+.photographers_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-top: 100px;
+}
+
+.photographer__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.photographer__image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 30px;
+}
+.photographer__name {
+  color: #d3573c;
+  font-size: 36px;
+}
+.photographer__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.photographer__location {
+  color: #901c1c;
+  font-size: 13px;
+}
+.photographer__tagline {
+  font-size: 10px;
+}
+.photographer__price {
+  color: #757575;
+  font-size: 9px;
+}

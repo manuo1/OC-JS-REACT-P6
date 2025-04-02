@@ -2,7 +2,7 @@ import { getPhotographers } from "../utils/api.js";
 import { photographerTemplate } from "../templates/photographer.js";
 
 async function displayData(photographers) {
-  const photographersSection = document.querySelector(".photographer_section");
+  const photographersSection = document.querySelector(".photographers_section");
 
   photographers.forEach((photographer) => {
     const photographerModel = photographerTemplate(photographer);

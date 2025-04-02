@@ -1,0 +1,40 @@
+@use "../base/variables" as *;
+
+.photographer {
+  // Photographer link
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__image {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+  }
+  &__name {
+    color: $secondary-color;
+    font-size: 36px;
+  }
+  // Photographer infos
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__location {
+    color: $primary-color;
+    font-size: 13px;
+  }
+  &__tagline {
+    font-size: 10px;
+  }
+  &__price {
+    color: $medium-gray;
+    font-size: 9px;
+  }
+}
