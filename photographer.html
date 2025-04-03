@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisheye - Photographe</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
-    <title>Fisheye - photographe</title>
   </head>
   <body>
     <div class="page-container" id="page-container">
+      <!-- ======= Header ======= -->
       <header class="header">
         <a href="index.html">
           <img src="assets/images/logo.png" class="header__logo" alt="Fisheye home page" />
         </a>
       </header>
-      <main id="main">
-        <div class="photograph-profil-header" id="photograph-profil-header">
-          <button class="contact_button" id="contact_button">Contactez-moi</button>
-        </div>
-      </main>
-      <!-- Contact modal -->
-      <div id="contact_modal">
-        <div class="modal">
+      <!-- ======= Main ======= -->
+      <main id="main"></main>
+
+      <!-- ======= Likes and Price ======= -->
+      <div class="likes-price-box">
+        <span class="likes-price-box__total-likes">
+          <span id="total-like-count">-</span>
+          <!--  heart -->
+          &#10084;
+        </span>
+        <span class="likes-price-box__price" id="likes-price-box-price">-€/jour</span>
+      </div>
+
+      <!-- ======= Contact modal ======= -->
+      <div id="contact_modal" class="modal" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
+        <div class="modal-content">
           <header>
-            <h2>Contactez-moi</h2>
-            <img id="close-icon" src="assets/icons/close.svg" alt="Fermer la fenêtre" />
+            <h2 id="contact-title">Contactez-moi</h2>
+            <button id="close-icon" aria-label="Fermer la fenêtre">&times;</button>
           </header>
           <form>
             <div>
-              <label>Prénom</label>
-              <input />
+              <label for="first-name">Prénom</label>
+              <input id="first-name" type="text" required />
             </div>
-            <button class="contact_button">Envoyer</button>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" required />
+            </div>
+            <div>
+              <label for="message">Votre message</label>
+              <textarea id="message" required></textarea>
+            </div>
+            <button type="submit" class="contact_button">Envoyer</button>
           </form>
         </div>
       </div>
+
       <script type="module" src="/scripts/pages/photographer.js"></script>
     </div>
   </body>
