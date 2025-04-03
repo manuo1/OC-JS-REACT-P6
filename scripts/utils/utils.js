@@ -3,4 +3,8 @@ function getPhotographerIdFromUrl() {
   return parseInt(params.get("id"), 10);
 }
 
-export { getPhotographerIdFromUrl };
+function sumLikes(items) {
+  return items.reduce((total, item) => total + item.likes, 0);
+}
+
+export { getPhotographerIdFromUrl, sumLikes };

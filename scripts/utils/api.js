@@ -9,7 +9,7 @@ async function fetchPhotographersData() {
   return response.json();
 }
 
-async function getPhotographers() {
+async function getPhotographerProfiles() {
   try {
     const data = await fetchPhotographersData();
 
@@ -31,18 +31,18 @@ async function getPhotographerData(id) {
       throw new Error("Invalid data format");
     }
 
-    const selectedPhotographer = data.photographers.find((photographer) => photographer.id === id) || null;
+    const selectedPhotographerProfil = data.photographers.find((photographer) => photographer.id === id) || null;
     const selectedPhotographerMedia = data.media.filter((media) => media.photographerId === id);
 
-    if (!selectedPhotographer) {
+    if (!selectedPhotographerProfil) {
       throw new Error(`Photographer with ID ${id} not found`);
     }
 
-    return { info: selectedPhotographer, media: selectedPhotographerMedia };
+    return { profil: selectedPhotographerProfil, media: selectedPhotographerMedia };
   } catch (error) {
     console.error(`Unable to get data for photographer ID ${id} :`, error);
     return null;
   }
 }
 
-export { getPhotographers, getPhotographerData };
+export { getPhotographerProfiles, getPhotographerData };
