@@ -1,0 +1,45 @@
+@use "../base/variables" as *;
+
+.photograph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $light-gray;
+  margin-top: 35px;
+  border-radius: 5px;
+  max-width: 1240px;
+  height: 313px;
+  padding: 0 47px;
+
+  &__idPhoto {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__profil {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  &__name {
+    color: $secondary-color;
+    font-size: 64px;
+    margin-top: 10px;
+  }
+  &__location {
+    color: $primary-color;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  &__tagline {
+    font-size: 18px;
+  }
+
+  &__contact_button {
+    width: 170px;
+    height: 69px;
+  }
+}

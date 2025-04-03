@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fisheye</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div class="container">
+    <div class="page-container">
+      <!-- ======= Header ======= -->
       <header class="header">
-        <img src="assets/images/logo.png" class="header__logo" alt="fisheye logo" />
+        <a href="index.html" class="header__logo-link" aria-label="Fisheye Home page">
+          <img src="assets/images/logo.png" class="header__logo" alt="Fisheye Home page" />
+        </a>
         <h1 class="header__title">Nos photographes</h1>
       </header>
+
+      <!-- ======= Main Content ======= -->
       <main id="main">
-        <div class="photographers_section"></div>
+        <section class="photographers_section" id="photographers_section" aria-label="Liste des photographes"></section>
       </main>
+
       <script type="module" src="scripts/pages/index.js"></script>
     </div>
   </body>

@@ -1,19 +1,23 @@
-import { getPhotographers } from "../utils/api.js";
+import { getPhotographerProfiles } from "../utils/api.js";
 import { photographerTemplate } from "../templates/photographer.js";
 
-async function displayData(photographers) {
-  const photographersSection = document.querySelector(".photographers_section");
+async function displayPhotographers(photographers) {
+  const photographersSection = document.getElementById("photographers_section");
 
   photographers.forEach((photographer) => {
-    const photographerModel = photographerTemplate(photographer);
-    const userCardDOM = photographerModel.getPhotographerCardDOM();
-    photographersSection.appendChild(userCardDOM);
+    const photographerProfil = photographerTemplate(photographer);
+    photographersSection.appendChild(photographerProfil.idCard());
   });
 }
 
 async function init() {
-  const photographers = await getPhotographers();
-  displayData(photographers);
+  const photographers = await getPhotographerProfiles();
+  if (photographers) {
+    displayPhotographers(photographers);
+  } else {
+    // TODO : replace alert with better UX/UI
+    alert("Une erreur est survenue");
+  }
 }
 
 init();

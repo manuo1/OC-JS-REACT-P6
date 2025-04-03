@@ -1,7 +1,12 @@
 @use "base/global";
 @use "base/variables";
+
 @use "components/button";
 @use "components/modal";
+@use "components/photographer-id-card";
+
 @use "layout/header";
-@use "layout/photographers";
-@use "layout/photographer";
+@use "layout/likes-and-price";
+
+@use "pages/index";
+@use "pages/photographer";
