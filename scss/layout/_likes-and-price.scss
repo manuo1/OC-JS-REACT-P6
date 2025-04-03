@@ -1,0 +1,23 @@
+@use "../base/variables" as *;
+
+.likes-price-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0px;
+  right: 35px;
+  background-color: $tertiary-color;
+  color: black;
+  border-radius: 5px 5px 0 0;
+  height: 67px;
+  width: 376px;
+  font-size: 24px;
+  font-weight: 500;
+
+  &__price,
+  &__total-likes {
+    width: 50%;
+    text-align: center;
+  }
+}

@@ -13,6 +13,7 @@ body {
 .page-container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 100px;
 }
 
 a {
@@ -20,17 +21,21 @@ a {
   color: inherit;
 }
 
-.contact_button {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  border: none;
+button {
+  font-family: "DM Sans", sans-serif;
   background-color: #901c1c;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: #db8876;
+  color: #000000;
 }
 
 #contact_modal {
@@ -91,6 +96,55 @@ form input {
   border-radius: 5px;
 }
 
+.photographerIdCard {
+  overflow: visible;
+  width: 200px;
+}
+.photographerIdCard__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.photographerIdCard__idPhoto {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 30px;
+}
+.photographerIdCard__name {
+  color: #d3573c;
+  font-size: 36px;
+  text-align: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.photographerIdCard__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.photographerIdCard__location {
+  color: #901c1c;
+  font-size: 13px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.photographerIdCard__tagline {
+  font-size: 10px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.photographerIdCard__price {
+  color: #757575;
+  font-size: 9px;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -101,12 +155,30 @@ form input {
 }
 .header__logo {
   height: 50px;
-  margin-left: 100px;
 }
 .header__title {
   color: #901c1c;
   font-size: 36px;
-  margin-right: 100px;
+}
+
+.likes-price-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0px;
+  right: 35px;
+  background-color: #db8876;
+  color: black;
+  border-radius: 5px 5px 0 0;
+  height: 67px;
+  width: 376px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.likes-price-box__price, .likes-price-box__total-likes {
+  width: 50%;
+  text-align: center;
 }
 
 .photographers_section {
@@ -115,39 +187,55 @@ form input {
   gap: 70px;
   margin-top: 100px;
 }
-
-.photographer__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.photographers_section > :nth-child(3n+1) {
+  justify-self: start;
 }
-.photographer__image {
+.photographers_section > :nth-child(3n+2) {
+  justify-self: center;
+}
+.photographers_section > :nth-child(3n) {
+  justify-self: end;
+}
+
+.photograph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+  margin-top: 35px;
+  border-radius: 5px;
+  max-width: 1240px;
+  height: 313px;
+  padding: 0 47px;
+}
+.photograph-header__idPhoto {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 30px;
 }
-.photographer__name {
-  color: #d3573c;
-  font-size: 36px;
-}
-.photographer__info {
+.photograph-header__profil {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  margin-bottom: 25px;
 }
-.photographer__location {
+.photograph-header__name {
+  color: #d3573c;
+  font-size: 64px;
+  margin-top: 10px;
+}
+.photograph-header__location {
   color: #901c1c;
-  font-size: 13px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
-.photographer__tagline {
-  font-size: 10px;
+.photograph-header__tagline {
+  font-size: 18px;
 }
-.photographer__price {
-  color: #757575;
-  font-size: 9px;
+.photograph-header__contact_button {
+  width: 170px;
+  height: 69px;
 }

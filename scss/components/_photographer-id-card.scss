@@ -1,16 +1,19 @@
 @use "../base/variables" as *;
 
-.photographer {
-  // Photographer link
+.photographerIdCard {
+  $id_photo_width: 200px;
+  overflow: visible; // Allows elements overflow
+  width: $id_photo_width; // fix on photo width to aligne cards on photo
+
   &__link {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  &__image {
-    height: 200px;
-    width: 200px;
+  &__idPhoto {
+    height: $id_photo_width;
+    width: $id_photo_width;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 30px;
@@ -18,8 +21,9 @@
   &__name {
     color: $secondary-color;
     font-size: 36px;
+    text-align: center;
+    width: max-content; // Allows text overflow
   }
-  // Photographer infos
   &__info {
     display: flex;
     justify-content: center;
@@ -29,12 +33,15 @@
   &__location {
     color: $primary-color;
     font-size: 13px;
+    width: max-content; // Allows text overflow
   }
   &__tagline {
     font-size: 10px;
+    width: max-content; // Allows text overflow
   }
   &__price {
     color: $medium-gray;
     font-size: 9px;
+    width: max-content; // Allows text overflow
   }
 }
