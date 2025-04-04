@@ -4,20 +4,20 @@ import { displayModal, closeModal } from "../utils/contactForm.js";
 import { photographerTemplate } from "../templates/photographer.js";
 
 async function displayPhotographer(photographerData) {
-  const main = document.getElementById("main");
-
-  //Profil section
-  const photographerProfil = photographerTemplate(photographerData.profil);
-  main.appendChild(photographerProfil.profilInfo());
-  // Media Gallery
+  const photographer = photographerTemplate(photographerData.profil);
+  // Add photograph header
+  const photographHeader = document.getElementById("photograph-header");
+  photographHeader.innerHTML = photographer.createPhotographHeader();
+  // Add Media Gallery
   const media = photographerData.media;
   console.log(media);
-  // Page Title
+  // Add total likes and price section
+  const likesPriceSection = document.getElementById("likes-price-section");
+  likesPriceSection.innerHTML = photographer.createLikesAndPriceSection();
+
+  // Update Page Title
   document.title = `Fisheye - ${photographerData.profil.name}`;
-  // Price
-  const priceElement = document.getElementById("likes-price-box-price");
-  priceElement.textContent = `${photographerData.profil.price}€/jour`;
-  // Likes
+  // Update Likes count
   const totalLikeCount = document.getElementById("total-like-count");
   totalLikeCount.textContent = sumLikes(photographerData.media);
 }

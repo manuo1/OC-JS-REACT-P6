@@ -161,7 +161,7 @@ form input {
   font-size: 36px;
 }
 
-.likes-price-box {
+.likes-price-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,7 +176,7 @@ form input {
   font-size: 24px;
   font-weight: 500;
 }
-.likes-price-box__price, .likes-price-box__total-likes {
+.likes-price-section__price, .likes-price-section__total-likes {
   width: 50%;
   text-align: center;
 }
