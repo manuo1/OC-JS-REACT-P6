@@ -2,6 +2,16 @@ import { getPhotographerData } from "../utils/api.js";
 import { getPhotographerIdFromUrl, sumLikes } from "../utils/utils.js";
 import { displayModal, closeModal } from "../utils/contactForm.js";
 import { photographerTemplate } from "../templates/photographer.js";
+import { mediaTemplate } from "../templates/media.js";
+
+function displayMediaList(mediaList) {
+  const mediaSection = document.getElementById("media-section");
+
+  mediaList.forEach((media) => {
+    const mediaCard = mediaTemplate(media).getMediaCard();
+    mediaSection.appendChild(mediaCard);
+  });
+}
 
 async function displayPhotographer(photographerData) {
   const photographer = photographerTemplate(photographerData.profil);
@@ -9,8 +19,7 @@ async function displayPhotographer(photographerData) {
   const photographHeader = document.getElementById("photograph-header");
   photographHeader.innerHTML = photographer.createPhotographHeader();
   // Add Media Gallery
-  const media = photographerData.media;
-  console.log(media);
+  displayMediaList(photographerData.media);
   // Add total likes and price section
   const likesPriceSection = document.getElementById("likes-price-section");
   likesPriceSection.innerHTML = photographer.createLikesAndPriceSection();
