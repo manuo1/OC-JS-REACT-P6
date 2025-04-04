@@ -3,7 +3,7 @@
 .photographerIdCard {
   $id_photo_width: 200px;
   overflow: visible; // Allows elements overflow
-  width: $id_photo_width; // fix on photo width to aligne cards on photo
+  width: $id_photo_width; // fix on photo width to align cards on photo
 
   &__link {
     display: flex;
