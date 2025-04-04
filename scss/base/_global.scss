@@ -20,3 +20,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+img {
+  overflow-clip-margin: unset; // remove pixelation of images on chrome
+}

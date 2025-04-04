@@ -21,6 +21,10 @@ a {
   color: inherit;
 }
 
+img {
+  overflow-clip-margin: unset;
+}
+
 button {
   font-family: "DM Sans", sans-serif;
   background-color: #901c1c;
@@ -36,6 +40,32 @@ button:hover,
 button:focus {
   background-color: #db8876;
   color: #000000;
+}
+
+.media-card {
+  color: #901c1c;
+  margin-bottom: 30px;
+}
+.media-card__media {
+  width: 350px;
+  height: 300px;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.media-card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+.media-card__title {
+  font-size: 24px;
+  font-weight: 400;
+}
+.media-card__likes {
+  font-size: 24px;
+  font-weight: 500;
 }
 
 #contact_modal {
@@ -238,4 +268,18 @@ form input {
 .photograph-header__contact_button {
   width: 170px;
   height: 69px;
+}
+
+.media-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.media-section > :nth-child(3n+1) {
+  justify-self: start;
+}
+.media-section > :nth-child(3n+2) {
+  justify-self: center;
+}
+.media-section > :nth-child(3n) {
+  justify-self: end;
 }

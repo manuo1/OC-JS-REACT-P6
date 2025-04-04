@@ -1,0 +1,18 @@
+Les données proviennent d'un json local et son considérée sures.
+Dans le cas ou on utilise des saisies utilisateurs il sera utile d'échapper les valeur
+insérée dans le html pour prévenir les failles XSS.
+
+ avec une fonction du style :
+
+    function escapeHTML(str) {
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+à utiliser :
+
+    <h2 class="photographerIdCard__name">${escapeHTML(name)}</h2>
