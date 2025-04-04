@@ -9,3 +9,5 @@
 [www.a11yproject.com - Accessibility checker](https://www.a11yproject.com/checklist/)
 
 [achecks.org - Accessibility checklist ](https://achecks.org/achecker/)
+
+[developer.mozilla.org <source> video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#usage_notes)
