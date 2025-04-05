@@ -20,7 +20,7 @@ function mediaTemplate(data) {
           ${
             mediaType === imageType
               ? `<img src="${mediaPath}" alt="${title}" class="media-card__media" />`
-              : `<video class="media-card__media" title="${title}" aria-label="${title}">
+              : `<video class="media-card__media" title="${title}" aria-label="${title}" tabindex="-1">
               <source src="${mediaPath}" type="video/mp4" />
               Votre navigateur ne supporte pas les vidéos HTML5.
             </video>`
