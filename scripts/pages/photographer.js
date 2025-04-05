@@ -25,6 +25,12 @@ async function displayPhotographer(photographerData) {
   const likesPriceSection = document.getElementById("likes-price-section");
   likesPriceSection.innerHTML = photographer.createLikesAndPriceSection();
 
+  // Update Contact modal photograph name
+  const modalPhotographName = document.getElementById("modal-photograph-name");
+  const modalRecipient = document.getElementById("modal-recipient");
+  modalPhotographName.textContent = photographerData.profil.name;
+  modalRecipient.value = photographerData.profil.name;
+
   // Update Page Title
   document.title = `Fisheye - ${photographerData.profil.name}`;
   // Update Likes count

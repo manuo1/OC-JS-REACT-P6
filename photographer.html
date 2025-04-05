@@ -27,26 +27,43 @@
       <div class="likes-price-section" id="likes-price-section"></div>
 
       <!-- ======= Contact modal ======= -->
-      <div id="contact_modal" class="modal" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
-        <div class="modal-content">
-          <header>
-            <h2 id="contact-title">Contactez-moi</h2>
-            <button id="close-icon" aria-label="Fermer la fenêtre">&times;</button>
+      <div id="modal-overlay" class="modal-overlay"></div>
+      <div
+        id="contact-modal"
+        class="modal"
+        role="dialog"
+        aria-labelledby="contact-title"
+        aria-modal="true"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="modal__content">
+          <header class="modal__header">
+            <div class="modal__title-and-close">
+              <h2 id="contact-title" class="modal__title">Contactez-moi</h2>
+              <button id="close-icon" class="modal__close" aria-label="Fermer la fenêtre">&#x2715;</button>
+            </div>
+            <div id="modal-photograph-name" class="modal__photograph-name"></div>
           </header>
-          <form>
-            <div>
-              <label for="first-name">Prénom</label>
-              <input id="first-name" type="text" required />
+          <form class="contact-form" name="contact-photograph">
+            <input type="hidden" name="recipient" id="modal-recipient" value="" />
+            <div class="contact-form__field">
+              <label for="first-name" class="contact-form__label">Prénom</label>
+              <input name="first-name" class="contact-form__input" type="text" required />
             </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" type="email" required />
+            <div class="contact-form__field">
+              <label for="last-name" class="contact-form__label">Nom</label>
+              <input name="last-name" class="contact-form__input" type="text" required />
             </div>
-            <div>
-              <label for="message">Votre message</label>
-              <textarea id="message" required></textarea>
+            <div class="contact-form__field">
+              <label for="email" class="contact-form__label">Email</label>
+              <input name="email" class="contact-form__input" type="email" required />
             </div>
-            <button type="submit" class="contact_button">Envoyer</button>
+            <div class="contact-form__field">
+              <label for="message" class="contact-form__label">Votre message</label>
+              <textarea name="message" class="contact-form__textarea" required></textarea>
+            </div>
+            <button type="submit" class="contact-form__button">Envoyer</button>
           </form>
         </div>
       </div>
