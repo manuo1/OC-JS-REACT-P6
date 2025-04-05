@@ -19,10 +19,8 @@ async function init() {
       photographersSection.appendChild(card);
     });
   } else {
-    // Affichage d'un message d'erreur dans l'UI si pas de données
-    const errorMsg = document.createElement("p");
-    errorMsg.textContent = "Une erreur est survenue, veuillez réessayer plus tard.";
-    photographersSection.appendChild(errorMsg);
+    // TODO : replace alert with better UX/UI
+    alert("Une erreur est survenue");
   }
 }
 
