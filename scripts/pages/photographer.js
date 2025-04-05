@@ -9,6 +9,7 @@ function displayMediaList(mediaList) {
 
   mediaList.forEach((media) => {
     const mediaCard = mediaTemplate(media).getMediaCard();
+    if (!mediaCard) return;
     mediaSection.appendChild(mediaCard);
   });
 }

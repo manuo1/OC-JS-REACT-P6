@@ -1,11 +1,17 @@
 function mediaTemplate(data) {
-  const { title, image, video, likes, photographerId, id } = data;
+  const { title = "Titre inconnu", image = null, video = null, likes = 0, photographerId = null, id = null } = data;
+
   const mediaPath = `assets/photographers/media/${photographerId}/${image || video}`;
   const imageType = "image";
   const videoType = "video";
-  const mediaType = image ? imageType : videoType;
+  const mediaType = image ? imageType : video ? videoType : null;
 
   function getMediaCard() {
+    if (!mediaType || !id) {
+      console.warn("Invalide Media", data);
+      return null;
+    }
+
     const article = document.createElement("article");
     article.classList.add("media-card");
 
