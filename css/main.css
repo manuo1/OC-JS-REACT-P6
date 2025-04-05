@@ -43,29 +43,46 @@ button:focus {
 }
 
 .media-card {
-  color: #901c1c;
   margin-bottom: 30px;
 }
+.media-card__link {
+  width: 350px;
+  height: 300px;
+}
 .media-card__media {
+  display: block;
   width: 350px;
   height: 300px;
   border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
+  background-color: #c4c4c4;
 }
 .media-card__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 6px;
+  width: 350px;
+  max-width: 100%;
 }
 .media-card__title {
+  color: #901c1c;
   font-size: 24px;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .media-card__likes {
+  white-space: nowrap;
+  color: #901c1c;
   font-size: 24px;
   font-weight: 500;
+}
+.media-card__like-button, .media-card__like-button:hover, .media-card__like-button:focus {
+  background-color: #ffffff;
+  color: #901c1c;
 }
 
 #contact_modal {

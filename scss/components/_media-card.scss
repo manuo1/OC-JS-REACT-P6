@@ -1,26 +1,50 @@
 @use "../base/variables" as *;
 .media-card {
-  color: $primary-color;
+  $card-width: 350px;
+  $media-height: 300px;
+
   margin-bottom: 30px;
 
+  &__link {
+    width: $card-width;
+    height: $media-height;
+  }
+
   &__media {
-    width: 350px;
-    height: 300px;
+    display: block;
+    width: $card-width;
+    height: $media-height;
     border-radius: 5px;
     object-fit: cover;
+    background-color: $light-gray-2;
   }
   &__info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 6px;
+    width: $card-width;
+    max-width: 100%;
   }
   &__title {
+    color: $primary-color;
     font-size: 24px;
     font-weight: 400;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__likes {
+    white-space: nowrap;
+    color: $primary-color;
     font-size: 24px;
     font-weight: 500;
+  }
+  &__like-button,
+  &__like-button:hover,
+  &__like-button:focus {
+    background-color: $white;
+    color: $primary-color;
   }
 }
