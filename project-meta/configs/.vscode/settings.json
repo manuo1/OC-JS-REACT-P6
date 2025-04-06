@@ -1,0 +1,44 @@
+{
+  "//": "Active le formatage automatique à l'enregistrement",
+  "editor.formatOnSave": true,
+
+  "//": "ESLint corrigera automatiquement les erreurs et validera JavaScript lors de l'enregistrement",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+
+  "//": "Définit Prettier comme formateur par défaut pour HTML",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "//": "Définit Prettier comme formateur par défaut pour CSS",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "//": "Définit Prettier comme formateur par défaut pour SCSS",
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "//": "Définit Prettier comme formateur par défaut pour JavaScript",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Paramètres pour le compilateur Live Sass
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css"
+    }
+  ],
+  "//": "Désactive la génération des fichiers .map (source maps) pour alléger le projet",
+  "liveSassCompile.settings.generateMap": false,
+
+  "//": "Ajoute automatiquement les préfixes CSS (-webkit-, -moz-, etc.)",
+  "liveSassCompile.settings.autoprefix": true
+}
