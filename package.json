@@ -1,0 +1,25 @@
+{
+  "name": "oc-js-react-p6",
+  "version": "1.0.0",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuo1/OC-JS-REACT-P6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuo1/OC-JS-REACT-P6/issues"
+  },
+  "homepage": "https://github.com/manuo1/OC-JS-REACT-P6#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0"
+  }
+}
