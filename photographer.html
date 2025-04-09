@@ -11,7 +11,7 @@
   <body>
     <div class="page-container" id="page-container">
       <!-- ======= Header ======= -->
-      <header class="header">
+      <header class="header" id="header">
         <a href="index.html">
           <img src="assets/images/logo.png" class="header__logo" alt="Fisheye home page" />
         </a>
@@ -19,12 +19,13 @@
 
       <!-- ======= Main ======= -->
       <main id="main">
+        <!-- ======= Photograph Info ======= -->
         <section id="photograph-header" class="photograph-header"></section>
+        <!-- ======= Media ======= -->
         <section id="media-section" class="media-section"></section>
+        <!-- ======= Likes and Price ======= -->
+        <div class="likes-price-section" id="likes-price-section"></div>
       </main>
-
-      <!-- ======= Likes and Price ======= -->
-      <div class="likes-price-section" id="likes-price-section"></div>
 
       <!-- ======= Contact modal ======= -->
       <div id="modal-overlay" class="modal-overlay"></div>
@@ -41,7 +42,7 @@
           <header class="modal__header">
             <div class="modal__title-and-close">
               <h2 id="contact-title" class="modal__title">Contactez-moi</h2>
-              <button id="close-icon" class="modal__close" aria-label="Fermer la fenêtre">&#x2715;</button>
+              <button id="modal-close-icon" class="modal__close" aria-label="Fermer la fenêtre">&#x2715;</button>
             </div>
             <div id="modal-photograph-name" class="modal__photograph-name"></div>
           </header>
@@ -49,21 +50,21 @@
             <input type="hidden" name="recipient" id="modal-recipient" value="" />
             <div class="contact-form__field">
               <label for="first-name" class="contact-form__label">Prénom</label>
-              <input name="first-name" class="contact-form__input" type="text" required />
+              <input id="first-name" name="first-name" class="contact-form__input" type="text" required />
             </div>
             <div class="contact-form__field">
               <label for="last-name" class="contact-form__label">Nom</label>
-              <input name="last-name" class="contact-form__input" type="text" required />
+              <input id="last-name" name="last-name" class="contact-form__input" type="text" required />
             </div>
             <div class="contact-form__field">
               <label for="email" class="contact-form__label">Email</label>
-              <input name="email" class="contact-form__input" type="email" required />
+              <input id="email" name="email" class="contact-form__input" type="email" required />
             </div>
             <div class="contact-form__field">
               <label for="message" class="contact-form__label">Votre message</label>
-              <textarea name="message" class="contact-form__textarea" required></textarea>
+              <textarea id="message" name="message" class="contact-form__textarea" required></textarea>
             </div>
-            <button type="submit" class="contact-form__button">Envoyer</button>
+            <button type="submit" class="contact-form__button" id="modal-submit-button">Envoyer</button>
           </form>
         </div>
       </div>

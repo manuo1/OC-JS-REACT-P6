@@ -116,6 +116,11 @@
     margin-top: 25px;
     font-size: 18px;
     font-weight: 700;
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+      color: $white;
+    }
   }
 }
 
