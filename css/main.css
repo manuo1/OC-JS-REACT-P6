@@ -181,6 +181,10 @@ button:focus {
   font-size: 18px;
   font-weight: 700;
 }
+.contact-form__button:hover, .contact-form__button:focus {
+  background-color: #901c1c;
+  color: #ffffff;
+}
 
 .modal-overlay {
   position: fixed;

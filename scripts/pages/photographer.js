@@ -1,6 +1,6 @@
 import { getPhotographerData } from "../utils/api.js";
 import { getPhotographerIdFromUrl, sumLikes } from "../utils/utils.js";
-import { displayModal, closeModal } from "../utils/contactForm.js";
+import { openModal, closeModal } from "../utils/contactForm.js";
 import { photographerTemplate } from "../templates/photographer.js";
 import { mediaTemplate } from "../templates/media.js";
 
@@ -57,8 +57,8 @@ async function init() {
   }
 
   // modal display / close
-  document.getElementById("contact_button").addEventListener("click", displayModal);
-  document.getElementById("close-icon").addEventListener("click", closeModal);
+  document.getElementById("contact_button").addEventListener("click", openModal);
+  document.getElementById("modal-close-icon").addEventListener("click", closeModal);
 }
 
 init();
