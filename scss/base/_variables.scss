@@ -7,9 +7,11 @@ $medium-gray: #757575;
 $light-gray: #fafafa;
 $light-gray-2: #c4c4c4;
 
+$light-box-border-color: #95fff9;
+
 $white: #ffffff;
 $black: #000000;
 
-$site-z-index: 0;
-$modal-overlay-z-index: 1;
-$modal-z-index: 2;
+$z-index-site: 0;
+$z-index-overlay: 1;
+$z-index-modal: 2;

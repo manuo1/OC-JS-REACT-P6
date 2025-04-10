@@ -1,8 +1,13 @@
 import { getPhotographerData } from "../utils/api.js";
 import { getPhotographerIdFromUrl, sumLikes } from "../utils/utils.js";
-import { openModal, closeModal } from "../utils/contactForm.js";
-import { photographerTemplate } from "../templates/photographer.js";
+import { initLightbox } from "../components/lightbox.js";
 import { mediaTemplate } from "../templates/media.js";
+import { initContactModal } from "../components/contactModal.js";
+import { photographerTemplate } from "../templates/photographer.js";
+
+function displayPhotographHeader(photographer) {
+  document.getElementById("photograph-header").innerHTML = photographer.createPhotographHeader();
+}
 
 function displayMediaList(mediaList) {
   const mediaSection = document.getElementById("media-section");
@@ -14,28 +19,32 @@ function displayMediaList(mediaList) {
   });
 }
 
-async function displayPhotographer(photographerData) {
-  const photographer = photographerTemplate(photographerData.profil);
-  // Add photograph header
-  const photographHeader = document.getElementById("photograph-header");
-  photographHeader.innerHTML = photographer.createPhotographHeader();
-  // Add Media Gallery
-  displayMediaList(photographerData.media);
-  // Add total likes and price section
-  const likesPriceSection = document.getElementById("likes-price-section");
-  likesPriceSection.innerHTML = photographer.createLikesAndPriceSection();
+function displayPhotographLikeAndPrice(photographer) {
+  document.getElementById("likes-price-section").innerHTML = photographer.createLikesAndPriceSection();
+}
 
-  // Update Contact modal photograph name
-  const modalPhotographName = document.getElementById("modal-photograph-name");
-  const modalRecipient = document.getElementById("modal-recipient");
-  modalPhotographName.textContent = photographerData.profil.name;
-  modalRecipient.value = photographerData.profil.name;
+function updatePhotographNameInContactModal(name) {
+  document.getElementById("contact-modal-photograph-name").textContent = name;
+  document.getElementById("contact-modal-recipient").value = name;
+}
+
+async function displayPhotographer(photographerData) {
+  const photographerProfil = photographerTemplate(photographerData.profil);
+  displayPhotographHeader(photographerProfil);
+  displayMediaList(photographerData.media);
+  displayPhotographLikeAndPrice(photographerProfil);
+  updatePhotographNameInContactModal(photographerData.profil.name);
 
   // Update Page Title
   document.title = `Fisheye - ${photographerData.profil.name}`;
+
   // Update Likes count
-  const totalLikeCount = document.getElementById("total-like-count");
-  totalLikeCount.textContent = sumLikes(photographerData.media);
+  document.getElementById("total-like-count").textContent = sumLikes(photographerData.media);
+
+  // lightbox
+  initLightbox();
+  // contact modal
+  initContactModal();
 }
 
 async function init() {
@@ -55,10 +64,6 @@ async function init() {
   } catch (error) {
     console.error("Error loading photographer:", error);
   }
-
-  // modal display / close
-  document.getElementById("contact_button").addEventListener("click", openModal);
-  document.getElementById("modal-close-icon").addEventListener("click", closeModal);
 }
 
 init();

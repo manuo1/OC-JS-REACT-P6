@@ -12,12 +12,11 @@ function pageScrollBarIsActive(active) {
 }
 
 // Prevent exit modal
-function keepFocusInModal(modal) {
-  const focusables = modal.querySelectorAll("button");
+function keepFocusInElement(element) {
+  const focusables = element.querySelectorAll("button");
   const first = focusables[0];
   const last = focusables[focusables.length - 1];
 
-  first.focus();
   document.addEventListener("keydown", (key) => {
     if (key.key !== "Tab") return;
     // Shift key returns the tab order
@@ -31,7 +30,7 @@ function keepFocusInModal(modal) {
   });
 }
 
-function closeModalWithEscapeKey(modal, closeFunction) {
+function allowToCloseModalWithEscapeKey(modal, closeFunction) {
   modal.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeFunction();
@@ -39,4 +38,30 @@ function closeModalWithEscapeKey(modal, closeFunction) {
   });
 }
 
-export { closeModalWithEscapeKey, getPhotographerIdFromUrl, keepFocusInModal, pageScrollBarIsActive, sumLikes };
+function setAriaVisible(ariaVisibleElements) {
+  const pageContainer = document.getElementById("page-container");
+  const directChildren = Array.from(pageContainer.children);
+
+  directChildren.forEach((element) => {
+    if (ariaVisibleElements.includes(element)) {
+      element.setAttribute("aria-hidden", "false");
+    } else {
+      element.setAttribute("aria-hidden", "true");
+    }
+  });
+}
+
+function displayPageOverlay(display) {
+  const value = display ? "flex" : "none";
+  document.getElementById("page-overlay").style.display = value;
+}
+
+export {
+  allowToCloseModalWithEscapeKey,
+  displayPageOverlay,
+  getPhotographerIdFromUrl,
+  keepFocusInElement,
+  pageScrollBarIsActive,
+  setAriaVisible,
+  sumLikes,
+};
