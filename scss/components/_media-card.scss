@@ -47,4 +47,8 @@
     background-color: $white;
     color: $primary-color;
   }
+
+  &__like-button[data-liked="true"] {
+    color: $secondary-color;
+  }
 }

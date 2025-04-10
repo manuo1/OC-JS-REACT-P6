@@ -1,5 +1,6 @@
 import { getPhotographerData } from "../utils/api.js";
-import { getPhotographerIdFromUrl, sumLikes } from "../utils/utils.js";
+import { getPhotographerIdFromUrl } from "../utils/utils.js";
+import { initLikeManager } from "../utils/likeManager.js";
 import { initLightbox } from "../components/lightbox.js";
 import { mediaTemplate } from "../templates/media.js";
 import { initContactModal } from "../components/contactModal.js";
@@ -34,17 +35,11 @@ async function displayPhotographer(photographerData) {
   displayMediaList(photographerData.media);
   displayPhotographLikeAndPrice(photographerProfil);
   updatePhotographNameInContactModal(photographerData.profil.name);
-
+  initLikeManager(photographerData.media);
+  initLightbox();
+  initContactModal();
   // Update Page Title
   document.title = `Fisheye - ${photographerData.profil.name}`;
-
-  // Update Likes count
-  document.getElementById("total-like-count").textContent = sumLikes(photographerData.media);
-
-  // lightbox
-  initLightbox();
-  // contact modal
-  initContactModal();
 }
 
 async function init() {
