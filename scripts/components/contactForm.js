@@ -1,4 +1,4 @@
-import { pageScrollBarIsActive } from "../utils/utils.js";
+import { closeModalWithEscapeKey, keepFocusInModal, pageScrollBarIsActive } from "../utils/utils.js";
 
 const modal = document.getElementById("contact-modal");
 const overlay = document.getElementById("modal-overlay");
@@ -17,48 +17,19 @@ function setPageAriaHiddenExceptModal(hidden) {
   modal.setAttribute("aria-hidden", !value);
 }
 
-function acceptEscapeToCloseModal() {
-  modal.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeModal();
-    }
-  });
-}
-
 function openModal() {
   form.reset();
   displayModal(true);
   pageScrollBarIsActive(false);
   setPageAriaHiddenExceptModal(true);
-  keepFocusInModal();
-  acceptEscapeToCloseModal();
+  keepFocusInModal(modal);
+  closeModalWithEscapeKey(modal, closeModal);
 }
 
 function closeModal() {
   displayModal(false);
   pageScrollBarIsActive(true);
   setPageAriaHiddenExceptModal(false);
-}
-
-// Prevent exit modal
-function keepFocusInModal() {
-  document.getElementById("modal-close-icon").focus();
-  document.addEventListener("keydown", (key) => {
-    if (key.key !== "Tab") return;
-
-    const focusables = modal.querySelectorAll("button");
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-
-    // Shift key returns the tab order
-    if (key.shiftKey && document.activeElement === first) {
-      key.preventDefault();
-      last.focus();
-    } else if (!key.shiftKey && document.activeElement === last) {
-      key.preventDefault();
-      first.focus();
-    }
-  });
 }
 
 // Submit form
