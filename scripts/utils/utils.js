@@ -6,5 +6,62 @@ function getPhotographerIdFromUrl() {
 function sumLikes(items) {
   return items.reduce((total, item) => total + item.likes, 0);
 }
+function pageScrollBarIsActive(active) {
+  const value = active ? "" : "hidden";
+  document.body.style.overflow = value;
+}
 
-export { getPhotographerIdFromUrl, sumLikes };
+// Prevent exit modal
+function keepFocusInElement(element) {
+  const focusables = element.querySelectorAll("button");
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+
+  document.addEventListener("keydown", (key) => {
+    if (key.key !== "Tab") return;
+    // Shift key returns the tab order
+    if (key.shiftKey && document.activeElement === first) {
+      key.preventDefault();
+      last.focus();
+    } else if (!key.shiftKey && document.activeElement === last) {
+      key.preventDefault();
+      first.focus();
+    }
+  });
+}
+
+function allowToCloseModalWithEscapeKey(modal, closeFunction) {
+  modal.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeFunction();
+    }
+  });
+}
+
+function setAriaVisible(ariaVisibleElements) {
+  const pageContainer = document.getElementById("page-container");
+  const directChildren = Array.from(pageContainer.children);
+
+  directChildren.forEach((element) => {
+    if (ariaVisibleElements.includes(element)) {
+      element.setAttribute("aria-hidden", "false");
+    } else {
+      element.setAttribute("aria-hidden", "true");
+    }
+  });
+}
+
+function displayPageOverlay(display) {
+  const value = display ? "flex" : "none";
+  document.getElementById("page-overlay").style.display = value;
+}
+
+export {
+  allowToCloseModalWithEscapeKey,
+  displayPageOverlay,
+  getPhotographerIdFromUrl,
+  keepFocusInElement,
+  pageScrollBarIsActive,
+  setAriaVisible,
+  sumLikes,
+};

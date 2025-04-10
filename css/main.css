@@ -42,6 +42,76 @@ button:focus {
   color: #000000;
 }
 
+.lightbox {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 87vw;
+  height: 96vh;
+  background: #ffffff;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  border: 2px solid #95fff9;
+}
+.lightbox__content {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.lightbox__media_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  flex: 1;
+}
+.lightbox__media {
+  background-color: #c4c4c4;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  min-width: 70vw;
+  overflow: hidden;
+}
+.lightbox__image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.lightbox__video {
+  height: 100%;
+  width: 100%;
+}
+.lightbox__text {
+  width: 100%;
+  align-content: start;
+  color: #901c1c;
+}
+.lightbox__close, .lightbox__prev, .lightbox__next {
+  padding: 10px;
+  font-size: 72px;
+  color: #901c1c;
+  background-color: transparent;
+}
+.lightbox__close:hover, .lightbox__close:focus, .lightbox__prev:hover, .lightbox__prev:focus, .lightbox__next:hover, .lightbox__next:focus {
+  background-color: transparent;
+  color: #d3573c;
+}
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 .media-card {
   margin-bottom: 30px;
 }
@@ -85,7 +155,7 @@ button:focus {
   color: #901c1c;
 }
 
-.modal {
+.contact-modal {
   z-index: 2;
   display: None;
   flex-direction: column;
@@ -101,15 +171,15 @@ button:focus {
   height: 900px;
   padding: 16px 35px;
 }
-.modal__content {
+.contact-modal__content {
   width: 100%;
 }
-.modal__title-and-close {
+.contact-modal__title-and-close {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.modal__close {
+.contact-modal__close {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -122,16 +192,16 @@ button:focus {
   background: none;
   border: none;
 }
-.modal__close:hover, .modal__close:focus {
+.contact-modal__close:hover, .contact-modal__close:focus {
   background: none;
   color: #ffffff;
 }
-.modal__title, .modal__photograph-name {
+.contact-modal__title, .contact-modal__photograph-name {
   margin: 0;
   font-size: 64px;
   font-weight: 400;
 }
-.modal__photograph-name {
+.contact-modal__photograph-name {
   transform: translateY(-10px);
 }
 
@@ -186,7 +256,7 @@ button:focus {
   color: #ffffff;
 }
 
-.modal-overlay {
+.page-overlay {
   position: fixed;
   top: 0;
   left: 0;
