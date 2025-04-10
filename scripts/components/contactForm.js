@@ -1,3 +1,5 @@
+import { pageScrollBarIsActive } from "../utils/utils.js";
+
 const modal = document.getElementById("contact-modal");
 const overlay = document.getElementById("modal-overlay");
 const form = document.forms["contact-photograph"];
@@ -13,11 +15,6 @@ function setPageAriaHiddenExceptModal(hidden) {
   document.getElementById("header").setAttribute("aria-hidden", value);
   document.getElementById("main").setAttribute("aria-hidden", value);
   modal.setAttribute("aria-hidden", !value);
-}
-
-function pageScrollBarIsActive(active) {
-  const value = active ? "" : "hidden";
-  document.body.style.overflow = value;
 }
 
 function acceptEscapeToCloseModal() {

@@ -6,5 +6,9 @@ function getPhotographerIdFromUrl() {
 function sumLikes(items) {
   return items.reduce((total, item) => total + item.likes, 0);
 }
+function pageScrollBarIsActive(active) {
+  const value = active ? "" : "hidden";
+  document.body.style.overflow = value;
+}
 
-export { getPhotographerIdFromUrl, sumLikes };
+export { getPhotographerIdFromUrl, pageScrollBarIsActive, sumLikes };
