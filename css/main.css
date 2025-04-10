@@ -104,7 +104,7 @@ button:focus {
 }
 .lightbox__close:hover, .lightbox__close:focus, .lightbox__prev:hover, .lightbox__prev:focus, .lightbox__next:hover, .lightbox__next:focus {
   background-color: transparent;
-  color: #d3573c;
+  color: #901c1c;
 }
 .lightbox__close {
   position: absolute;
@@ -153,6 +153,9 @@ button:focus {
 .media-card__like-button, .media-card__like-button:hover, .media-card__like-button:focus {
   background-color: #ffffff;
   color: #901c1c;
+}
+.media-card__like-button[data-liked=true] {
+  color: #d3573c;
 }
 
 .contact-modal {
