@@ -61,10 +61,20 @@ function displayPageOverlay(display) {
   document.getElementById("page-overlay").style.display = value;
 }
 
+function getNextIndex(currentIndex, maxIndex) {
+  return currentIndex + 1 > maxIndex ? 0 : currentIndex + 1;
+}
+
+function getPreviousIndex(currentIndex, maxIndex) {
+  return currentIndex - 1 < 0 ? maxIndex : currentIndex - 1;
+}
+
 export {
   allowToCloseWithEscapeKey,
   allowToCloseIfClicOutside,
   displayPageOverlay,
+  getNextIndex,
+  getPreviousIndex,
   getPhotographerIdFromUrl,
   keepFocusInElement,
   pageScrollBarIsActive,

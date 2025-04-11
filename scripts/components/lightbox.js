@@ -4,6 +4,8 @@ import {
   keepFocusInElement,
   pageScrollBarIsActive,
   setAriaVisible,
+  getNextIndex,
+  getPreviousIndex,
 } from "../utils/utils.js";
 
 function initLightbox() {
@@ -51,24 +53,12 @@ function initLightbox() {
   // ==================== Get Current Media ====================
 
   function getNextMedia() {
-    if (currentIndex < mediaArray.length - 1) {
-      // move forward in the list of media
-      currentIndex++;
-    } else {
-      // go back to the beginning of the list
-      currentIndex = 0;
-    }
+    currentIndex = getNextIndex(currentIndex, mediaArray.length - 1);
     return mediaArray[currentIndex];
   }
 
   function getPreviousMedia() {
-    if (currentIndex > 0) {
-      //move backwards in the media list
-      currentIndex--;
-    } else {
-      // go back to the end of the list
-      currentIndex = mediaArray.length - 1;
-    }
+    currentIndex = getPreviousIndex(currentIndex, mediaArray.length - 1);
     return mediaArray[currentIndex];
   }
 
