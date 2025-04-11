@@ -6,7 +6,7 @@ import {
   getNextIndex,
   getPreviousIndex,
 } from "../utils/utils.js";
-
+import { displayMediaList } from "../pages/photographer.js";
 function initSortDropdown() {
   const dropdown = document.getElementById("sort-dropdown");
   const sortButton = document.getElementById("sort-button");
@@ -34,8 +34,8 @@ function initSortDropdown() {
 
   // Update data-value and textContent of sort-button and list option
   // to match the user's selected option
-  function updateDropdownValues(selectedElement) {
-    const newOptions = sortOptionsBySelectedValue(getCurrentOptions(), selectedElement.getAttribute("data-value"));
+  function updateDropdownValues(selectedDataValue) {
+    const newOptions = sortOptionsBySelectedValue(getCurrentOptions(), selectedDataValue);
     sortOptions.forEach((option, index) => {
       option.innerText = newOptions[index].text;
       option.setAttribute("data-value", newOptions[index].value);
@@ -67,8 +67,10 @@ function initSortDropdown() {
   sortOptions.forEach((option) => {
     option.addEventListener("click", (e) => {
       if (dropdown.classList.contains("is-open")) {
+        const selectedDataValue = e.target.getAttribute("data-value");
         closeDropdown();
-        updateDropdownValues(e.target);
+        updateDropdownValues(selectedDataValue);
+        displayMediaList(selectedDataValue);
       } else {
         openDropdown();
       }

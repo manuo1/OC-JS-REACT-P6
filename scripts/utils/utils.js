@@ -69,6 +69,32 @@ function getPreviousIndex(currentIndex, maxIndex) {
   return currentIndex - 1 < 0 ? maxIndex : currentIndex - 1;
 }
 
+function sortMediaArray(mediaArray, sortBy) {
+  const sortedArray = [...mediaArray]; // don't change original array
+
+  switch (sortBy) {
+    case "title":
+      sortedArray.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "date":
+      sortedArray.sort((a, b) => new Date(b.date) - new Date(a.date)); // Latest Before
+      break;
+    case "popularity":
+      sortedArray.sort((a, b) => b.likes - a.likes); // Max likes before
+      break;
+    default:
+      console.warn(`Unknown sort type: ${sortBy}`);
+  }
+
+  return sortedArray;
+}
+
+function resetSection(section) {
+  if (section) {
+    section.innerHTML = "";
+  }
+}
+
 export {
   allowToCloseWithEscapeKey,
   allowToCloseIfClicOutside,
@@ -78,5 +104,7 @@ export {
   getPhotographerIdFromUrl,
   keepFocusInElement,
   pageScrollBarIsActive,
+  resetSection,
   setAriaVisible,
+  sortMediaArray,
 };

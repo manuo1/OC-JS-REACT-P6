@@ -1,5 +1,5 @@
 import { getPhotographerData } from "../utils/api.js";
-import { getPhotographerIdFromUrl } from "../utils/utils.js";
+import { getPhotographerIdFromUrl, sortMediaArray, resetSection } from "../utils/utils.js";
 import { initLikeManager } from "../utils/likeManager.js";
 import { initLightbox } from "../components/lightbox.js";
 import { mediaTemplate } from "../templates/media.js";
@@ -7,14 +7,19 @@ import { initContactModal } from "../components/contactModal.js";
 import { initSortDropdown } from "../components/sortDropdown.js";
 import { photographerTemplate } from "../templates/photographer.js";
 
+let mediaArray = [];
+
 function displayPhotographHeader(photographer) {
   document.getElementById("photograph-header").innerHTML = photographer.createPhotographHeader();
 }
 
-function displayMediaList(mediaList) {
+function displayMediaList(sortBy) {
   const mediaSection = document.getElementById("media-section");
+  resetSection(mediaSection);
 
-  mediaList.forEach((media) => {
+  const sortedMediaList = sortMediaArray(mediaArray, sortBy);
+  console.log(sortedMediaList.slice(0, 2));
+  sortedMediaList.forEach((media) => {
     const mediaCard = mediaTemplate(media).getMediaCard();
     if (!mediaCard) return;
     mediaSection.appendChild(mediaCard);
@@ -32,8 +37,9 @@ function updatePhotographNameInContactModal(name) {
 
 async function displayPhotographer(photographerData) {
   const photographerProfil = photographerTemplate(photographerData.profil);
+  mediaArray = photographerData.media;
   displayPhotographHeader(photographerProfil);
-  displayMediaList(photographerData.media);
+  displayMediaList("popularity");
   displayPhotographLikeAndPrice(photographerProfil);
   updatePhotographNameInContactModal(photographerData.profil.name);
   initSortDropdown();
@@ -64,3 +70,5 @@ async function init() {
 }
 
 init();
+
+export { displayMediaList };
