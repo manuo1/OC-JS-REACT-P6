@@ -27,9 +27,17 @@ function keepFocusInElement(element) {
   });
 }
 
-function allowToCloseModalWithEscapeKey(modal, closeFunction) {
-  modal.addEventListener("keydown", (e) => {
+function allowToCloseWithEscapeKey(closeFunction) {
+  document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      closeFunction();
+    }
+  });
+}
+
+function allowToCloseIfClicOutside(element, closeFunction) {
+  document.addEventListener("click", (e) => {
+    if (!element.contains(e.target)) {
       closeFunction();
     }
   });
@@ -54,7 +62,8 @@ function displayPageOverlay(display) {
 }
 
 export {
-  allowToCloseModalWithEscapeKey,
+  allowToCloseWithEscapeKey,
+  allowToCloseIfClicOutside,
   displayPageOverlay,
   getPhotographerIdFromUrl,
   keepFocusInElement,
