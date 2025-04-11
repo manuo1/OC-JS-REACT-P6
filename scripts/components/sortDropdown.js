@@ -1,4 +1,11 @@
-import { allowToCloseWithEscapeKey, allowToCloseIfClicOutside, keepFocusInElement } from "../utils/utils.js";
+import {
+  allowToCloseWithEscapeKey,
+  allowToCloseIfClicOutside,
+  keepFocusInElement,
+  pageScrollBarIsActive,
+  getNextIndex,
+  getPreviousIndex,
+} from "../utils/utils.js";
 
 function initSortDropdown() {
   const dropdown = document.getElementById("sort-dropdown");
@@ -11,7 +18,7 @@ function initSortDropdown() {
     const curentOptions = [];
     sortOptions.forEach((option) => {
       const value = option.getAttribute("data-value");
-      const text = option.textContent;
+      const text = option.textContent.trim();
       curentOptions.push({ value, text });
     });
     return curentOptions;
@@ -44,6 +51,7 @@ function initSortDropdown() {
     allowToCloseWithEscapeKey(closeDropdown);
     allowToCloseIfClicOutside(dropdown, closeDropdown);
     keepFocusInElement(sortList);
+    pageScrollBarIsActive(false);
     document.getElementById("first-sort-option").focus();
   }
 
@@ -51,6 +59,7 @@ function initSortDropdown() {
     dropdown.classList.remove("is-open");
     sortButton.setAttribute("aria-expanded", "false");
     sortList.setAttribute("aria-hidden", "true");
+    pageScrollBarIsActive(true);
   }
 
   // ==================== Event Listeners ====================
@@ -64,6 +73,18 @@ function initSortDropdown() {
         openDropdown();
       }
     });
+  });
+
+  // Up and down keys navigation
+  sortList.addEventListener("keydown", (e) => {
+    const focusableOptions = Array.from(sortList.querySelectorAll(".sort-dropdown__button-option"));
+    const currentOptionIndex = focusableOptions.findIndex((el) => el === document.activeElement);
+
+    if (e.key === "ArrowDown") {
+      focusableOptions[getNextIndex(currentOptionIndex, focusableOptions.length - 1)].focus();
+    } else if (e.key === "ArrowUp") {
+      focusableOptions[getPreviousIndex(currentOptionIndex, focusableOptions.length - 1)].focus();
+    }
   });
 }
 
