@@ -1,6 +1,6 @@
 import {
   displayPageOverlay,
-  allowToCloseModalWithEscapeKey,
+  allowToCloseWithEscapeKey,
   keepFocusInElement,
   pageScrollBarIsActive,
   setAriaVisible,
@@ -79,7 +79,7 @@ function initLightbox() {
     setAriaVisible([lightbox]);
     pageScrollBarIsActive(false);
     keepFocusInElement(lightbox);
-    allowToCloseModalWithEscapeKey(lightbox, closeLightBox);
+    allowToCloseWithEscapeKey(closeLightBox);
     updateLightboxMediaContent(mediaLink);
     lightbox.style.display = "flex";
     document.getElementById("lightbox-close").focus();

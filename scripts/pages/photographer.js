@@ -4,6 +4,7 @@ import { initLikeManager } from "../utils/likeManager.js";
 import { initLightbox } from "../components/lightbox.js";
 import { mediaTemplate } from "../templates/media.js";
 import { initContactModal } from "../components/contactModal.js";
+import { initSortDropdown } from "../components/sortDropdown.js";
 import { photographerTemplate } from "../templates/photographer.js";
 
 function displayPhotographHeader(photographer) {
@@ -35,6 +36,7 @@ async function displayPhotographer(photographerData) {
   displayMediaList(photographerData.media);
   displayPhotographLikeAndPrice(photographerProfil);
   updatePhotographNameInContactModal(photographerData.profil.name);
+  initSortDropdown();
   initLikeManager(photographerData.media);
   initLightbox();
   initContactModal();

@@ -1,5 +1,5 @@
 import {
-  allowToCloseModalWithEscapeKey,
+  allowToCloseWithEscapeKey,
   keepFocusInElement,
   pageScrollBarIsActive,
   setAriaVisible,
@@ -20,7 +20,7 @@ function initContactModal() {
     pageScrollBarIsActive(false);
     setAriaVisible([contactModal]);
     keepFocusInElement(contactModal);
-    allowToCloseModalWithEscapeKey(contactModal, closeContactModal);
+    allowToCloseWithEscapeKey(closeContactModal);
     contactModal.style.display = "flex";
     document.getElementById("modal-close-icon").focus();
   }

@@ -21,6 +21,35 @@
       <main id="main">
         <!-- ======= Photograph Info ======= -->
         <section id="photograph-header" class="photograph-header"></section>
+
+        <!-- ======= Media Sort DropDown ======= -->
+        <div class="sort-container">
+          <label id="sort-label" class="sort-container__label" for="sort-button">Trier par</label>
+
+          <div class="sort-dropdown" id="sort-dropdown">
+            <button
+              id="sort-button"
+              class="sort-dropdown__button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-labelledby="sort-label sort-button"
+              data-value="popularity"
+            >
+              Popularité
+            </button>
+            <span class="sort-dropdown__icon" id="sort-icon">&#x25BC;</span>
+
+            <ul id="sort-list" class="sort-dropdown__list" role="listbox" aria-hidden="true">
+              <li role="option" class="sort-dropdown__item">
+                <button id="first-sort-option" class="sort-dropdown__button-option" data-value="date">Date</button>
+              </li>
+              <li role="option" class="sort-dropdown__item">
+                <button id="second-sort-option" class="sort-dropdown__button-option" data-value="title">Titre</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <!-- ======= Media ======= -->
         <section id="media-section" class="media-section"></section>
         <!-- ======= Likes and Price ======= -->
@@ -45,7 +74,7 @@
             <div class="contact-modal__title-and-close">
               <h2 id="contact-title" class="contact-modal__title">Contactez-moi</h2>
               <button id="modal-close-icon" class="contact-modal__close" aria-label="Fermer la fenêtre">
-                &#x2715;
+                &#10006;
               </button>
             </div>
             <div id="contact-modal-photograph-name" class="contact-modal__photograph-name"></div>
@@ -76,7 +105,7 @@
       <!-- ======= Lightbox Modal ======= -->
       <div id="lightbox" class="lightbox" aria-hidden="true">
         <div class="lightbox__content">
-          <button id="lightbox-close" class="lightbox__close" aria-label="Fermer la lightbox">✕</button>
+          <button id="lightbox-close" class="lightbox__close" aria-label="Fermer la lightbox">&#10006;</button>
           <button id="lightbox-prev" class="lightbox__prev" aria-label="Image précédente">&#10094;</button>
           <div class="lightbox__media_content">
             <div class="lightbox__media" id="lightbox-media"></div>
