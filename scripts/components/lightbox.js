@@ -113,6 +113,15 @@ function initLightbox() {
     updateLightboxMediaContent(getNextMedia());
   });
 
+  // left and right keys navigation
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      updateLightboxMediaContent(getPreviousMedia());
+    } else if (e.key === "ArrowRight") {
+      updateLightboxMediaContent(getNextMedia());
+    }
+  });
+
   // Close Light box
   document.getElementById("lightbox-close").addEventListener("click", () => {
     closeLightBox();
