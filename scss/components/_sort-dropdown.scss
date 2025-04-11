@@ -32,6 +32,7 @@
       padding: 0 16px;
       font-size: 18px;
       font-weight: 700;
+      position: relative;
 
       .sort-dropdown.is-open & {
         border-radius: 5px 5px 0 0;
@@ -39,6 +40,15 @@
     }
 
     &__icon {
+      position: absolute;
+      right: 17px;
+
+      top: 50%;
+      transform: translateY(-50%);
+
+      font-size: 18px;
+      font-weight: 700;
+      color: $white;
       transition: transform 0.3s ease;
     }
 
@@ -113,7 +123,7 @@
 
     &.is-open {
       .sort-dropdown__icon {
-        transform: rotate(180deg);
+        transform: translateY(-50%) rotate(180deg);
       }
 
       .sort-dropdown__button {
