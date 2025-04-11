@@ -74,7 +74,7 @@ button:focus {
   flex: 1;
 }
 .lightbox__media {
-  background-color: #c4c4c4;
+  background-color: #fafafa;
   border-radius: 5px;
   height: 100%;
   width: 100%;
