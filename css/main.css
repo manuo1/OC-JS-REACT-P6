@@ -21,10 +21,6 @@ a {
   color: inherit;
 }
 
-img {
-  overflow-clip-margin: unset;
-}
-
 button {
   font-family: "DM Sans", sans-serif;
   background-color: #901c1c;
@@ -84,8 +80,7 @@ button:focus {
 .lightbox__image {
   height: 100%;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .lightbox__video {
   height: 100%;
@@ -124,8 +119,7 @@ button:focus {
   width: 350px;
   height: 300px;
   border-radius: 5px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   background-color: #c4c4c4;
 }
 .media-card__info {
@@ -284,15 +278,13 @@ button:focus {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-bottom: 30px;
 }
 .photographerIdCard__name {
   color: #d3573c;
   font-size: 36px;
   text-align: center;
-  width: -moz-max-content;
   width: max-content;
 }
 .photographerIdCard__info {
@@ -304,18 +296,15 @@ button:focus {
 .photographerIdCard__location {
   color: #901c1c;
   font-size: 13px;
-  width: -moz-max-content;
   width: max-content;
 }
 .photographerIdCard__tagline {
   font-size: 10px;
-  width: -moz-max-content;
   width: max-content;
 }
 .photographerIdCard__price {
   color: #757575;
   font-size: 9px;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -502,8 +491,7 @@ button:focus {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .photograph-header__profil {
   display: flex;

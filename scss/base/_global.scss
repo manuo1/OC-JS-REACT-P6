@@ -21,6 +21,12 @@ a {
   color: inherit;
 }
 
-img {
-  overflow-clip-margin: unset; // remove pixelation of images on chrome
-}
+// object-fit:cover can makes the image pixelated on chrome
+// https://issues.chromium.org/issues/40230839
+// can be removed with trick :
+
+// img {
+//   overflow-clip-margin: unset; /* fix pixelation in Chrome */
+// }
+
+// but does not pass CSS validation :/
