@@ -20,7 +20,7 @@ function mediaTemplate(data) {
           ${
             mediaType === imageType
               ? `<img src="${mediaPath}" alt="${title}" class="media-card__media" />`
-              : `<video class="media-card__media" title="${title}" aria-label="${title}" tabindex="-1">
+              : `<video class="media-card__media" title="${title}" aria-label="${title}">
               <source src="${mediaPath}" type="video/mp4" />
               Votre navigateur ne supporte pas les vidéos HTML5.
             </video>`
@@ -29,7 +29,7 @@ function mediaTemplate(data) {
         <div class="media-card__info">
           <h2 class="media-card__title">${title}</h2>
           <div class="media-card__likes">
-            <span class="media-card__likes-count" aria-label="${likes} likes">${likes}</span>
+            <span class="media-card__likes-count" aria-label="likes">${likes}</span>
             <button class="media-card__like-button" aria-label="Aimer ${title}" data-liked="false">
               &#10084;
             </button>
