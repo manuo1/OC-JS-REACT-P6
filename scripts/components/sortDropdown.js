@@ -6,7 +6,8 @@ import {
   getNextIndex,
   getPreviousIndex,
 } from "../utils/utils.js";
-import { displayMediaList } from "../pages/photographer.js";
+import { displayMediaList } from "../services/photographer.js";
+
 function initSortDropdown() {
   const dropdown = document.getElementById("sort-dropdown");
   const sortButton = document.getElementById("sort-button");

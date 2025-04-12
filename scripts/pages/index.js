@@ -1,4 +1,4 @@
-import { getPhotographerProfiles } from "../utils/api.js";
+import { getPhotographerProfiles } from "../services/api.js";
 import { photographerTemplate } from "../templates/photographer.js";
 
 async function displayPhotographers(photographers) {
