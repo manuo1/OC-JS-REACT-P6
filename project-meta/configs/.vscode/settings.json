@@ -40,5 +40,5 @@
   "liveSassCompile.settings.generateMap": false,
 
   "//": "Ajoute automatiquement les préfixes CSS (-webkit-, -moz-, etc.)",
-  "liveSassCompile.settings.autoprefix": true
+  "liveSassCompile.settings.autoprefix": false
 }
