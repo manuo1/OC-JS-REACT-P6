@@ -29,7 +29,7 @@ function mediaTemplate(data) {
         <div class="media-card__info">
           <h2 class="media-card__title">${title}</h2>
           <div class="media-card__likes">
-            <span class="media-card__likes-count" aria-label="likes">${likes}</span>
+            <span class="media-card__likes-count" aria-label="${likes} likes">${likes}</span>
             <button class="media-card__like-button" aria-label="Aimer ${title}" data-liked="false">
               &#10084;
             </button>
