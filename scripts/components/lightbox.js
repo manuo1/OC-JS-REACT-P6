@@ -38,7 +38,7 @@ function initLightbox() {
   // ==================== Update LightBox Media ====================
 
   function updateLightboxMediaContent(mediaLink) {
-    const mediaIsVideo = mediaLink.querySelector("video") !== null;
+    const mediaIsVideo = mediaLink.getAttribute("data-media-type") === "video";
     const src = mediaLink.href;
     const alt = mediaLink.getAttribute("aria-label");
 

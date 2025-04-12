@@ -109,10 +109,13 @@ button:focus {
 
 .media-card {
   margin-bottom: 30px;
+  position: relative;
 }
 .media-card__link {
+  position: absolute;
   width: 350px;
   height: 300px;
+  z-index: 1;
 }
 .media-card__media {
   display: block;

@@ -2,12 +2,14 @@
 .media-card {
   $card-width: 350px;
   $media-height: 300px;
-
   margin-bottom: 30px;
+  position: relative;
 
   &__link {
+    position: absolute;
     width: $card-width;
     height: $media-height;
+    z-index: $z-index-overlay;
   }
 
   &__media {

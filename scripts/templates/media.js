@@ -16,16 +16,22 @@ function mediaTemplate(data) {
     article.classList.add("media-card");
 
     article.innerHTML = `
-        <a href="${mediaPath}" class="media-card__link" aria-label="${title}" data-id="${id}">
-          ${
-            mediaType === imageType
-              ? `<img src="${mediaPath}" alt="${title}" class="media-card__media" />`
-              : `<video class="media-card__media" title="${title}" aria-label="${title}">
-              <source src="${mediaPath}" type="video/mp4" />
-              Votre navigateur ne supporte pas les vidéos HTML5.
-            </video>`
-          }
+        <a
+        href="${mediaPath}"
+        class="media-card__link"
+        aria-label="${title}"
+        data-id="${id}"
+        data-media-type="${mediaType}"
+        >
         </a>
+        ${
+          mediaType === imageType
+            ? `<img src="${mediaPath}" alt="${title}" class="media-card__media" />`
+            : `<video class="media-card__media" title="${title}" aria-label="${title}" tabindex="-1">
+            <source src="${mediaPath}" type="video/mp4" />
+            Votre navigateur ne supporte pas les vidéos HTML5.
+          </video>`
+        }
         <div class="media-card__info">
           <h2 class="media-card__title">${title}</h2>
           <div class="media-card__likes">
