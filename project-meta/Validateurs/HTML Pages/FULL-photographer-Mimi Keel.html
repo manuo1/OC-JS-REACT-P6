@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisheye - Mimi Keel</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&amp;display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page-container" id="page-container">
+      <!-- ======= Header ======= -->
+      <header class="header" id="header">
+        <a href="index.html">
+          <img src="assets/images/logo.png" class="header__logo" alt="Fisheye home page" />
+        </a>
+      </header>
+
+      <!-- ======= Main ======= -->
+      <main id="main">
+        <!-- ======= Photograph Info ======= -->
+        <section id="photograph-header" class="photograph-header">
+          <div class="photograph-header__profil">
+            <h1 class="photograph-header__name">Mimi Keel</h1>
+            <p class="photograph-header__location">London, UK</p>
+            <p class="photograph-header__tagline">Voir le beau dans le quotidien</p>
+          </div>
+          <button class="photograph-header__contact_button" id="contact_button" aria-haspopup="dialog">
+            Contactez-moi
+          </button>
+          <img
+            src="assets/photographers/id-photos-min/MimiKeel.jpg"
+            alt="Photo de Mimi Keel"
+            class="photograph-header__idPhoto"
+          />
+        </section>
+
+        <!-- ======= Media Sort DropDown ======= -->
+        <div class="sort-container">
+          <label id="sort-label" class="sort-container__label" for="sort-button">Trier par</label>
+
+          <div class="sort-dropdown" id="sort-dropdown">
+            <button
+              id="sort-button"
+              class="sort-dropdown__button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-labelledby="sort-label sort-button"
+              data-value="popularity"
+            >
+              Popularité
+            </button>
+            <span class="sort-dropdown__icon" id="sort-icon">▼</span>
+
+            <ul id="sort-list" class="sort-dropdown__list" role="listbox" aria-hidden="true">
+              <li role="option" class="sort-dropdown__item">
+                <button id="first-sort-option" class="sort-dropdown__button-option" data-value="date">Date</button>
+              </li>
+              <li role="option" class="sort-dropdown__item">
+                <button id="second-sort-option" class="sort-dropdown__button-option" data-value="title">Titre</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ======= Media ======= -->
+        <div id="media-section" class="media-section">
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Animals_Wild_Horses_in_the_mountains.mp4"
+              class="media-card__link"
+              aria-label="Wild horses in the mountains"
+              data-id="5234343"
+            >
+              <video
+                class="media-card__media"
+                title="Wild horses in the mountains"
+                aria-label="Wild horses in the mountains"
+              >
+                <source
+                  src="assets/photographers/media/243/Animals_Wild_Horses_in_the_mountains.mp4"
+                  type="video/mp4"
+                />
+                Votre navigateur ne supporte pas les vidéos HTML5.
+              </video>
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Wild horses in the mountains</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="142 likes">142</span>
+                <button
+                  class="media-card__like-button"
+                  aria-label="Aimer Wild horses in the mountains"
+                  data-liked="false"
+                >
+                  ❤
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Travel_Lonesome.jpg"
+              class="media-card__link"
+              aria-label="Lonesome"
+              data-id="623534343"
+            >
+              <img src="assets/photographers/media/243/Travel_Lonesome.jpg" alt="Lonesome" class="media-card__media" />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Lonesome</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="88 likes">88</span>
+                <button class="media-card__like-button" aria-label="Aimer Lonesome" data-liked="false">❤</button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Travel_HillsideColor.jpg"
+              class="media-card__link"
+              aria-label="Hillside Color"
+              data-id="625025343"
+            >
+              <img
+                src="assets/photographers/media/243/Travel_HillsideColor.jpg"
+                alt="Hillside Color"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Hillside Color</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="85 likes">85</span>
+                <button class="media-card__like-button" aria-label="Aimer Hillside Color" data-liked="false">❤</button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Event_BenevidesWedding.jpg"
+              class="media-card__link"
+              aria-label="Benevides Wedding"
+              data-id="23523434"
+            >
+              <img
+                src="assets/photographers/media/243/Event_BenevidesWedding.jpg"
+                alt="Benevides Wedding"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Benevides Wedding</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="77 likes">77</span>
+                <button class="media-card__like-button" aria-label="Aimer Benevides Wedding" data-liked="false">
+                  ❤
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Portrait_Nora.jpg"
+              class="media-card__link"
+              aria-label="Nora Portrait"
+              data-id="2523434634"
+            >
+              <img
+                src="assets/photographers/media/243/Portrait_Nora.jpg"
+                alt="Nora Portrait"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Nora Portrait</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="63 likes">63</span>
+                <button class="media-card__like-button" aria-label="Aimer Nora Portrait" data-liked="false">❤</button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Animals_Rainbow.jpg"
+              class="media-card__link"
+              aria-label="Rainbow Bird"
+              data-id="95234343"
+            >
+              <img
+                src="assets/photographers/media/243/Animals_Rainbow.jpg"
+                alt="Rainbow Bird"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Rainbow Bird</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="59 likes">59</span>
+                <button class="media-card__like-button" aria-label="Aimer Rainbow Bird" data-liked="false">❤</button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Portrait_Background.jpg"
+              class="media-card__link"
+              aria-label="Raw Black Portrait"
+              data-id="398847109"
+            >
+              <img
+                src="assets/photographers/media/243/Portrait_Background.jpg"
+                alt="Raw Black Portrait"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Raw Black Portrait</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="55 likes">55</span>
+                <button class="media-card__like-button" aria-label="Aimer Raw Black Portrait" data-liked="false">
+                  ❤
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Event_PintoWedding.jpg"
+              class="media-card__link"
+              aria-label="Boulder Wedding"
+              data-id="65235234"
+            >
+              <img
+                src="assets/photographers/media/243/Event_PintoWedding.jpg"
+                alt="Boulder Wedding"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Boulder Wedding</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="52 likes">52</span>
+                <button class="media-card__like-button" aria-label="Aimer Boulder Wedding" data-liked="false">❤</button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Portrait_Wednesday.jpg"
+              class="media-card__link"
+              aria-label="Wednesday Potrait"
+              data-id="2525345343"
+            >
+              <img
+                src="assets/photographers/media/243/Portrait_Wednesday.jpg"
+                alt="Wednesday Potrait"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Wednesday Potrait</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="34 likes">34</span>
+                <button class="media-card__like-button" aria-label="Aimer Wednesday Potrait" data-liked="false">
+                  ❤
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="media-card">
+            <a
+              href="assets/photographers/media/243/Event_SeasideWedding.jpg"
+              class="media-card__link"
+              aria-label="Seaside Wedding"
+              data-id="2534342"
+            >
+              <img
+                src="assets/photographers/media/243/Event_SeasideWedding.jpg"
+                alt="Seaside Wedding"
+                class="media-card__media"
+              />
+            </a>
+            <div class="media-card__info">
+              <h2 class="media-card__title">Seaside Wedding</h2>
+              <div class="media-card__likes">
+                <span class="media-card__likes-count" aria-label="25 likes">25</span>
+                <button class="media-card__like-button" aria-label="Aimer Seaside Wedding" data-liked="false">❤</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- ======= Likes and Price ======= -->
+        <div class="likes-price-section" id="likes-price-section">
+          <span class="likes-price-section__total-likes">
+            <span id="total-like-count" aria-live="polite">680</span>
+            ❤
+          </span>
+          <span class="likes-price-section__price" id="likes-price-section-price">400€/jour</span>
+        </div>
+      </main>
+
+      <!-- ======= Page Overlay ======= -->
+      <div id="page-overlay" class="page-overlay"></div>
+
+      <!-- ======= Contact modal ======= -->
+      <div
+        id="contact-modal"
+        class="contact-modal"
+        role="dialog"
+        aria-labelledby="contact-title"
+        aria-modal="true"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <div class="contact-modal__content">
+          <header class="contact-modal__header">
+            <div class="contact-modal__title-and-close">
+              <h2 id="contact-title" class="contact-modal__title">Contactez-moi</h2>
+              <button id="modal-close-icon" class="contact-modal__close" aria-label="Fermer la fenêtre">✖</button>
+            </div>
+            <div id="contact-modal-photograph-name" class="contact-modal__photograph-name">Mimi Keel</div>
+          </header>
+          <form class="contact-form" name="contact-photograph">
+            <input type="hidden" name="recipient" id="contact-modal-recipient" value="Mimi Keel" />
+            <div class="contact-form__field">
+              <label for="first-name" class="contact-form__label">Prénom</label>
+              <input id="first-name" name="first-name" class="contact-form__input" type="text" required="" />
+            </div>
+            <div class="contact-form__field">
+              <label for="last-name" class="contact-form__label">Nom</label>
+              <input id="last-name" name="last-name" class="contact-form__input" type="text" required="" />
+            </div>
+            <div class="contact-form__field">
+              <label for="email" class="contact-form__label">Email</label>
+              <input id="email" name="email" class="contact-form__input" type="email" required="" />
+            </div>
+            <div class="contact-form__field">
+              <label for="message" class="contact-form__label">Votre message</label>
+              <textarea id="message" name="message" class="contact-form__textarea" required=""></textarea>
+            </div>
+            <button type="submit" class="contact-form__button" id="modal-submit-button">Envoyer</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ======= Lightbox Modal ======= -->
+      <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox__content">
+          <button id="lightbox-close" class="lightbox__close" aria-label="Fermer la lightbox">✖</button>
+          <button id="lightbox-prev" class="lightbox__prev" aria-label="Image précédente">❮</button>
+          <div class="lightbox__media_content">
+            <div class="lightbox__media" id="lightbox-media"></div>
+            <p id="lightbox-text" class="lightbox__text"></p>
+          </div>
+          <button id="lightbox-next" class="lightbox__next" aria-label="Image suivante">❯</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="scripts/pages/photographer.js"></script>
+  </body>
+</html>
