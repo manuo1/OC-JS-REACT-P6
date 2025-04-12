@@ -13,10 +13,10 @@ function displayPhotographHeader(photographer) {
   document.getElementById("photograph-header").innerHTML = photographer.createPhotographHeader();
 }
 
-function displayMediaList(sortBy) {
+function displayMediaList() {
   const mediaSection = document.getElementById("media-section");
   resetSection(mediaSection);
-
+  const sortBy = document.getElementById("sort-button").getAttribute("data-value");
   const sortedMediaList = sortMediaArray(mediaArray, sortBy);
   console.log(sortedMediaList.slice(0, 2));
   sortedMediaList.forEach((media) => {
@@ -39,7 +39,7 @@ async function displayPhotographer(photographerData) {
   const photographerProfil = photographerTemplate(photographerData.profil);
   mediaArray = photographerData.media;
   displayPhotographHeader(photographerProfil);
-  displayMediaList("popularity");
+  displayMediaList();
   displayPhotographLikeAndPrice(photographerProfil);
   updatePhotographNameInContactModal(photographerData.profil.name);
   initSortDropdown();

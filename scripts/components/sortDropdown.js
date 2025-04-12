@@ -70,7 +70,7 @@ function initSortDropdown() {
         const selectedDataValue = e.target.getAttribute("data-value");
         closeDropdown();
         updateDropdownValues(selectedDataValue);
-        displayMediaList(selectedDataValue);
+        displayMediaList();
       } else {
         openDropdown();
       }
@@ -81,11 +81,11 @@ function initSortDropdown() {
   sortList.addEventListener("keydown", (e) => {
     const focusableOptions = Array.from(sortList.querySelectorAll(".sort-dropdown__button-option"));
     const currentOptionIndex = focusableOptions.findIndex((el) => el === document.activeElement);
-
+    const focusableOptionsLength = focusableOptions.length;
     if (e.key === "ArrowDown") {
-      focusableOptions[getNextIndex(currentOptionIndex, focusableOptions.length - 1)].focus();
+      focusableOptions[getNextIndex(currentOptionIndex, focusableOptionsLength - 1)].focus();
     } else if (e.key === "ArrowUp") {
-      focusableOptions[getPreviousIndex(currentOptionIndex, focusableOptions.length - 1)].focus();
+      focusableOptions[getPreviousIndex(currentOptionIndex, focusableOptionsLength - 1)].focus();
     }
   });
 }
