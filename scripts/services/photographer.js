@@ -48,4 +48,10 @@ function updatePhotographNameInContactModal(name) {
   document.getElementById("contact-modal-recipient").value = name;
 }
 
-export { displayPhotographer, displayMediaList };
+function updateMediaListDisplay() {
+  displayMediaList();
+  initLightbox();
+  initLikeManager(mediaArray);
+}
+
+export { displayPhotographer, updateMediaListDisplay };

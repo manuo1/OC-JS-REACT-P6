@@ -6,7 +6,7 @@ import {
   getNextIndex,
   getPreviousIndex,
 } from "../utils/utils.js";
-import { displayMediaList } from "../services/photographer.js";
+import { updateMediaListDisplay } from "../services/photographer.js";
 
 function initSortDropdown() {
   const dropdown = document.getElementById("sort-dropdown");
@@ -71,7 +71,7 @@ function initSortDropdown() {
         const selectedDataValue = e.target.getAttribute("data-value");
         closeDropdown();
         updateDropdownValues(selectedDataValue);
-        displayMediaList();
+        updateMediaListDisplay();
       } else {
         openDropdown();
       }
